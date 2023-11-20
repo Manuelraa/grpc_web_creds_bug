@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package grpc_web_cred_bug.v1;
+
+import "google/api/annotations.proto";
+
+message Test {
+    string name = 1;
+}
+
+message TestRequest {
+    string name = 1;
+}
+
+message TestResponse {
+    Test test = 1;
+}
+
+service TestService {
+    rpc Test(TestRequest) returns (TestResponse) {
+        option (google.api.http) = {
+            post: "/v1/test"
+        };
+    };
+}

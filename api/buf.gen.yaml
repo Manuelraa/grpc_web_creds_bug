@@ -1,0 +1,11 @@
+version: v1
+plugins:
+  - plugin: js
+    out: ./gen
+    opt:
+      - import_style=commonjs
+  - plugin: grpc-web
+    out: ./gen
+    opt:
+      - import_style=commonjs
+      - mode=grpcwebtext
